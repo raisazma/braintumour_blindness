@@ -1,0 +1,291 @@
+# Import data from a CSV file
+data <- read.csv("Book3.csv")
+
+# Create a contingency table
+table <- table(data$SEX, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$BLINDNESS, data$SEX)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+library(ggplot2)
+
+# Filter the data to include only blind patients
+blind_data <- data %>% 
+  filter(BLINDNESS == 1)
+
+# Create a histogram of the age distribution of blind patients
+ggplot(blind_data, aes(x = KATEGORIUMUR)) +
+  geom_histogram(binwidth = 5, color = "black", fill = "blue") +
+  labs(x = "Age", y = "Frequency")
+
+####################################################
+
+# Import data from a CSV file
+data <- read.csv("Book3.csv")
+
+# Create a contingency table
+table <- table(data$KATEGORIUMUR, data$BLINDNESS)
+
+# Perform chi-square test
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$KATEGORIUMUR, data$BLINDNESS)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Import data from a CSV file
+data <- read.csv("Book3.csv")
+
+# Create a contingency table
+table <- table(data$HEALTHINSURANCE, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$HEALTHINSURANCE, data$BLINDNESS)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Create a contingency table
+table <- table(data$NUMBER_OF_MEDICAL_PERSONNELS_VISITED_BEFORE_NEUROSURGERY, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$NUMBER_OF_MEDICAL_PERSONNELS_VISITED_BEFORE_NEUROSURGERY, data$BLINDNESS)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Create a contingency table
+table <- table(data$TIME_FROM_ONSET_TO_FIRST_MEDICAL_VISIT, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$TIME_FROM_ONSET_TO_FIRST_MEDICAL_VISIT, data$BLINDNESS)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Create a contingency table
+table <- table(data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON, data$BLINDNESS)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Create a contingency table
+table <- table(data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON, data$BLINDNESS)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$BLINDNESS, data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+####################################################
+
+# Create a contingency table
+table <- table(data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON, data$NUMBER_OF_MEDICAL_PERSONNELS_VISITED_BEFORE_NEUROSURGERY)
+
+# Perform chi-square test
+result <- chisq.test(table)
+result <- fisher.test(table)
+
+# Print the result
+print(result)
+
+# Create a contingency table of blindness and category
+table2 <- table(data$NUMBER_OF_MEDICAL_PERSONNELS_VISITED_BEFORE_NEUROSURGERY, data$TIMESPAN_FROM_FIRST_MEDICAL_VISIT_TO_NEUROSURGEON)
+
+# Calculate the row percentages
+row_perc <- prop.table(table2, 1)
+
+# Print the row percentages
+print(row_perc)
+
+##
+library(lubridate)
+
+# Create a vector of birth dates
+birth_dates <- c("30/08/1991", "22/01/1995", "15/04/1974", "03/05/1960", "21/05/1978", "06/09/1954", "16/01/1960", "23/10/1984", "12/01/1966", "19/10/1979", "24/08/1987", "16/01/1960", "20/05/1951", "05/09/1948", "24/08/1987", "08/05/1975", "12/01/1966", "02/11/1985", "22/07/1956", "17/06/1974", "24/08/1986", "11/10/1991", "03/07/1972", "11/04/1956", "08/04/1994", "07/08/1989", "08/04/1994", "23/12/1968", "09/06/1991", "26/04/1987", "15/12/1982", "13/07/1983", "15/03/1966", "16/07/1965", "24/08/1967", "08/05/1975", "12/06/1966", "09/04/1985", "29/07/1958", "17/03/1972", "24/08/1943", "19/16/1974", "19/07/1957", "11/12/1980", "08/04/1994", "07/08/1989", "08/04/1994", "23/12/1968", "12/06/1979", "22/01/1987", "22/12/1987", "13/07/1983", "15/03/1966", "16/07/1965")
+
+# Convert the birth dates to date format
+birth_dates <- dmy(birth_dates)
+
+# Calculate the age of each patient in 2020
+ages <- year(as.Date("2020-09-08")) - year(birth_dates)
+
+# Print the ages
+print(ages)
+
+# Create a vector of the given data
+data <- c(29, 25, 46, 60, 42, 66, 60, 36, 54, 41, 33, 60, 69, 72, 33, 45, 54, 35, 64, 46, 34, 29, 48, 64, 26, 31, 26, 52, 29, 33, 38, 37, 54, 55, 53, 45, 54, 35, 62, 48, 77, NA, 63, 40, 26, 31, 26, 52, 41, 33, 33, 37, 54, 55)
+
+# Calculate the median of the data
+median_value <- median(data, na.rm = TRUE)
+
+# Print the median
+print(median_value)
+
+# Create a vector of numbers
+numbers <- c(2,
+             1,
+             2,
+             1,
+             1,
+             1,
+             2,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             2,
+             1,
+             2,
+             1,
+             1,
+             2,
+             2,
+             1,
+             1,
+             1,
+             2,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             2,
+             1,
+             2,
+             1,
+             1,
+             2,
+             1,
+             1,
+             1,
+             1,
+             2,
+             1,
+             1,
+             2,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1,
+             1)
+# Count the number of occurrences of 1 and 2
+count_1 <- sum(numbers == 1, na.rm = TRUE)
+count_2 <- sum(numbers == 2, na.rm = TRUE)
+
+# Print the counts
+cat("Number of 1s:", count_1, "\n")
+cat("Number of 2s:", count_2, "\n")
+
+library(eeptools)
+
+# Create a vector of birth dates
+birth_dates <- c("1990-01-01", "1985-05-10", "1978-12-31")
+
+# Calculate age in years
+ages <- age_calc(as.Date(birth_dates), units = "years")
+
+# Print the ages
+print(ages)
+
+# Create a vector of numbers
+numbers <- c(28, 24, 59, 41, 65, 59, 35, 53, 40, 32, 44, 53, 34, 63, 45, 33, 28, 47, 63, 25, 30, 26, 51, 28, 29, 25, 51, 28, 53, 52, 53, 34, 47, 25, 30, 52, 40, 53)
+
+# Calculate the sum of the numbers
+sum_numbers <- sum(numbers)
+
+# Print the sum
+print(sum_numbers)
